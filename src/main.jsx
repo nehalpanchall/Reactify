@@ -4,4 +4,15 @@ import App from "./App.jsx";
 
 let root = document.getElementById("root");
 
-createRoot(root).render(<App />);
+function MyApp() {
+  return (
+    <>
+      <h1>Custom method!!</h1>
+    </>
+  );
+}
+
+createRoot(root).render(
+  <MyApp />
+  // Or MyApp() (function Invocation, but it is not recommended)
+);
