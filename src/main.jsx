@@ -17,6 +17,6 @@ createRoot(root).render(
   <>
     <App />
 
-    <Counter />
+    {/* <Counter /> */}
   </>
 );
