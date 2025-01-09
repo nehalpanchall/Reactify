@@ -14,10 +14,9 @@ function MyApp() {
 }
 
 createRoot(root).render(
-  //   <MyApp />
-  // Or MyApp() (function Invocation, but it is not recommended)
+  <>
+    <App />
 
-  //   <App />
-
-  <Counter />
+    <Counter />
+  </>
 );

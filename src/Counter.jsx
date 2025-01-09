@@ -26,11 +26,21 @@ let Counter = () => {
 
   return (
     <>
-      <h1>Counter: {counter} </h1>
+      <h1 className="m-5">Counter: {counter} </h1>
 
-      <button onClick={plusOne}>Add +1 {counter} </button>
+      <button
+        className="bg-slate-400 m-5 p-2 border-b-2 rounded-lg"
+        onClick={plusOne}
+      >
+        Add +1 {counter}{" "}
+      </button>
 
-      <button onClick={minOne}>Delete -1 {counter}</button>
+      <button
+        className="bg-slate-400 m-5 p-2 border-b-2 rounded-lg"
+        onClick={minOne}
+      >
+        Delete -1 {counter}
+      </button>
 
       <h2>Footer: {counter}</h2>
     </>
