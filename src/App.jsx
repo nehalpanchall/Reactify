@@ -1,4 +1,5 @@
 import Card from "./Card";
+import BgChanger from "./components/BgChanger";
 import MyArrowFun from "./Label";
 import { A, S } from "./Label";
 
@@ -28,6 +29,7 @@ function App() {
         tags={hashTags}
         intro={myObj}
       />
+      <BgChanger />
     </>
   );
 }

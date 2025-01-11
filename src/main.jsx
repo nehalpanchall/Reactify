@@ -3,7 +3,7 @@ import "./index.css";
 import App from "./App.jsx";
 import Counter from "./Counter.jsx";
 
-let root = document.getElementById("root");
+export let root = document.getElementById("root");
 
 function MyApp() {
   return (
