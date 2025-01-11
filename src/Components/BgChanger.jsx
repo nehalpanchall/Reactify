@@ -1,9 +1,7 @@
-import { root } from "../main";
-
-const BgChanger = () => {
+const BgChanger = ({ rootElement } = props) => {
   let abc = (event) => {
     let colorName = event.target.textContent;
-    let body = root.parentElement;
+    let body = rootElement.parentElement;
     body.style.backgroundColor = colorName;
   };
 

@@ -3,7 +3,7 @@ import "./index.css";
 import App from "./App.jsx";
 import Counter from "./Counter.jsx";
 
-export let root = document.getElementById("root");
+let root = document.getElementById("root");
 
 function MyApp() {
   return (
@@ -15,7 +15,7 @@ function MyApp() {
 
 createRoot(root).render(
   <>
-    <App />
+    <App rootElement={root} />
 
     {/* <Counter /> */}
   </>

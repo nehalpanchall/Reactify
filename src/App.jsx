@@ -3,7 +3,7 @@ import BgChanger from "./components/BgChanger";
 import MyArrowFun from "./Label";
 import { A, S } from "./Label";
 
-function App() {
+function App(props) {
   let details =
     "React.js Library is really amazing to learn after mastering JavaScript concepts including ES6";
 
@@ -29,7 +29,7 @@ function App() {
         tags={hashTags}
         intro={myObj}
       />
-      <BgChanger />
+      <BgChanger rootElement={props.rootElement} />
     </>
   );
 }
