@@ -1,29 +1,65 @@
+import { useState } from "react";
+
 const BgChanger = ({ rootElement } = props) => {
-  let abc = (event) => {
-    let colorName = event.target.textContent;
-    let body = rootElement.parentElement;
-    body.style.backgroundColor = colorName;
-  };
+  let [color, setColor] = useState("black");
+
+  let body = rootElement.parentElement;
+  body.style.backgroundColor = color;
 
   return (
     <>
       <div className="m-4 bg-slate-300 rounded-md ">
-        <button onClick={abc} className="m-3 bg-black text-white">
+        <button
+          onClick={() => {
+            setColor("black");
+          }}
+          className="m-3"
+          style={{ backgroundColor: "black", color: "white" }}
+        >
           Black
         </button>
-        <button onClick={abc} className="m-3">
+        <button
+          onClick={() => {
+            setColor("white");
+          }}
+          className="m-3"
+        >
           White
         </button>
-        <button onClick={abc} className="m-3 bg-red-600 text-white">
+        <button
+          onClick={() => {
+            setColor("red");
+          }}
+          className="m-3"
+          style={{ backgroundColor: "red", color: "white" }}
+        >
           Red
         </button>
-        <button onClick={abc} className="m-3 bg-green-500 text-white">
+        <button
+          onClick={() => {
+            setColor("green");
+          }}
+          className="m-3"
+          style={{ backgroundColor: "green", color: "white" }}
+        >
           Green
         </button>
-        <button onClick={abc} className="m-3 bg-yellow-400">
+        <button
+          onClick={() => {
+            setColor("yellow");
+          }}
+          className="m-3"
+          style={{ backgroundColor: "yellow" }}
+        >
           Yellow
         </button>
-        <button onClick={abc} className="m-3 bg-blue-600 text-white">
+        <button
+          onClick={() => {
+            setColor("blue");
+          }}
+          className="m-3"
+          style={{ backgroundColor: "blue", color: "white" }}
+        >
           Blue
         </button>
       </div>
