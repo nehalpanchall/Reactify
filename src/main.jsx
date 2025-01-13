@@ -1,7 +1,8 @@
 import { createRoot } from "react-dom/client";
-import "./index.css";
+
 import App from "./App.jsx";
 import Counter from "./Counter.jsx";
+import PasswordGen from "./Components/PasswordGen.jsx";
 
 let root = document.getElementById("root");
 
@@ -15,8 +16,10 @@ function MyApp() {
 
 createRoot(root).render(
   <>
-    <App rootElement={root} />
+    {/* <App rootElement={root} /> */}
 
     {/* <Counter /> */}
+
+    <PasswordGen />
   </>
 );

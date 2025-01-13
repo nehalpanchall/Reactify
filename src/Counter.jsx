@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./Counter.css";
 
 let Counter = () => {
   //   let counter = 6;
