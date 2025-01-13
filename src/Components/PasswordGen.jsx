@@ -21,9 +21,11 @@ let PasswordGen = () => {
     }
 
     setPassword(pass);
-
-    //
   }, [length, numberAllowed, charAllowed]);
+
+  useEffect(() => {
+    passwordGenerator();
+  }, [length, numberAllowed, charAllowed, passwordGenerator]);
 
   return (
     <>
