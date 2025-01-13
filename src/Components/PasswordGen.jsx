@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 let PasswordGen = () => {
   let [length, setLength] = useState(6);
@@ -6,6 +6,16 @@ let PasswordGen = () => {
   let [charAllowed, setCharAllowed] = useState(false);
   let [password, setPassword] = useState("");
 
+  // useRef hook using useCallback for optimization
+  let passwordRef = useRef(null);
+
+  let copyToClipBoard = useCallback(() => {
+    passwordRef.current.select();
+    passwordRef.current.setSelectionRange(0, 6);
+    window.navigator.clipboard.writeText(password);
+  }, [password]);
+
+  // useCallback hook: for optimization
   let passwordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -23,6 +33,7 @@ let PasswordGen = () => {
     setPassword(pass);
   }, [length, numberAllowed, charAllowed]);
 
+  // useEffect hook: when page loads
   useEffect(() => {
     passwordGenerator();
   }, [length, numberAllowed, charAllowed, passwordGenerator]);
@@ -32,9 +43,15 @@ let PasswordGen = () => {
       <h1>Password Generator</h1>
 
       <div>
-        <input type="text" value={password} placeholder="Password" readOnly />
+        <input
+          type="text"
+          value={password}
+          ref={passwordRef}
+          placeholder="Password"
+          readOnly
+        />
 
-        <button>Copy</button>
+        <button onClick={copyToClipBoard}>Copy</button>
       </div>
 
       <div className="py-7">
