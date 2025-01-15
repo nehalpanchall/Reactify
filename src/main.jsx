@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 
 import "./index.css";
 import Todo from "./Components/Todo";
+import BharatClock from "./Components/BharatClock";
 
 let root = document.getElementById("root");
 
@@ -21,6 +22,8 @@ createRoot(root).render(
 
     {/* <PasswordGen /> */}
 
-    <Todo />
+    {/* <Todo /> */}
+
+    <BharatClock />
   </>
 );
