@@ -1,8 +1,8 @@
 import { createRoot } from "react-dom/client";
 
-import App from "./App.jsx";
-import Counter from "./Counter.jsx";
-import PasswordGen from "./Components/PasswordGen.jsx";
+import Todo from "./Components/Todo.jsx";
+
+import "./index.css";
 
 let root = document.getElementById("root");
 
