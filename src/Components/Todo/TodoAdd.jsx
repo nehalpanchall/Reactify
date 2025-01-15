@@ -1,9 +1,9 @@
+import TodoTitle from "./TodoTitle";
+
 const TodoAdd = () => {
   return (
     <>
-      <h1 className="text-center text-gray-600 text-xl mb-6 font-bold">
-        Todo React App
-      </h1>
+      <TodoTitle />
       <div class="flex items-center gap-4 mb-4">
         <input
           type="text"
