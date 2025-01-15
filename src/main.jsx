@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import Todo from "./Components/Todo";
 import BharatClock from "./Components/BharatClock";
+import Iterate from "./Iterate";
 
 let root = document.getElementById("root");
 
@@ -24,6 +25,8 @@ createRoot(root).render(
 
     {/* <Todo /> */}
 
-    <BharatClock />
+    {/* <BharatClock /> */}
+
+    <Iterate />
   </>
 );
