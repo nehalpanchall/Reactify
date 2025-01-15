@@ -1,8 +1,7 @@
 import { createRoot } from "react-dom/client";
 
-import Todo from "./Components/Todo.jsx";
-
 import "./index.css";
+import Todo from "./Components/Todo";
 
 let root = document.getElementById("root");
 
@@ -20,6 +19,8 @@ createRoot(root).render(
 
     {/* <Counter /> */}
 
-    <PasswordGen />
+    {/* <PasswordGen /> */}
+
+    <Todo />
   </>
 );
