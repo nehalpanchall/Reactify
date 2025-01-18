@@ -1,25 +1,14 @@
 import css from './Calculator.module.css';
 
 const ButtonsContainer = () => {
+  let operations = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '+', '-', '*', '/', 'C'];
+
   return (
     <>
       <div className={css.displayButtons}>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>0</button>
-
-        <button>+</button>
-        <button>-</button>
-        <button>*</button>
-        <button>/</button>
-        <button>C</button>
+        {operations.map((items, index) => {
+          return <button key={index}>{items}</button>;
+        })}
       </div>
     </>
   );
