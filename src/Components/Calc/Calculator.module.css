@@ -13,15 +13,6 @@
   border-radius: 5px;
 }
 
-.display {
-  width: 80%;
-  height: 10%;
-  border: 1px solid black;
-  margin: 30px 40px;
-  border-radius: 5px;
-  background-color: white;
-}
-
 .displayButtons {
   margin: 40px;
   display: flex;
@@ -36,4 +27,16 @@ button {
   border-radius: 10px;
   background-color: cornsilk;
   margin: 10px;
+}
+
+input {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  padding: 20px;
+  width: 80%;
+  border: 1px solid black;
+  margin: 30px 35px 0px;
+  border-radius: 5px;
+  background-color: white;
 }
