@@ -1,12 +1,26 @@
 const Iterate = () => {
-  const games = ["God of War", "Spider Man", "Call of Duty", "GTA 6"];
+  const games = ['God of War', 'Spider Man', 'Call of Duty', 'GTA 6'];
+
+  const webSeries = ['Game of Thrones', 'Harry Potter', 'Office', 'Suits'];
+
   return (
     <>
-      <h1>PS5 Game</h1>
-      <ul className="list-disc pl-5">
-        {games.map((elements) => (
-          <li>{elements}</li>
+      <h1 className="ml-5 font-bold">List of PS5 Games</h1>
+
+      {/* Implicit Return: Without curly braces */}
+      <ul className="list-disc ml-7">
+        {games.map(items => (
+          <li>{items}</li>
         ))}
+      </ul>
+
+      <br />
+      {/* Explitcit Return: With curly braces */}
+      <h1 className="ml-5 font-bold">List of Web Series</h1>
+      <ul className="list-disc ml-7">
+        {webSeries.map(items => {
+          return <li>{items}</li>;
+        })}
       </ul>
     </>
   );
