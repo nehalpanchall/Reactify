@@ -1,5 +1,5 @@
-const TodoTitle = () => {
-  let title = "Todo React App";
+const TodoTitle = (props) => {
+  let title = props.newTitle;
   return (
     <>
       <h1 className="text-center text-gray-600 text-xl mb-6 font-bold">
