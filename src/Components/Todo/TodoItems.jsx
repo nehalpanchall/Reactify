@@ -17,7 +17,7 @@ const TodoItems = ({ todoItems }) => {
 
   return (
     <>
-      {todoItems.map((items) => {
+      {todoItems.map(items => {
         return (
           <div
             key={items.todoName}
