@@ -1,11 +1,12 @@
-import { createRoot } from "react-dom/client";
+import { createRoot } from 'react-dom/client';
 
-import "./index.css";
-import Todo from "./Components/Todo";
-import BharatClock from "./Components/BharatClock";
-import Iterate from "./Iterate";
+import './index.css';
+import Todo from './Components/Todo';
+import BharatClock from './Components/BharatClock';
+import Iterate from './Iterate';
+import Calculator from './Components/Calculator';
 
-let root = document.getElementById("root");
+let root = document.getElementById('root');
 
 function MyApp() {
   return (
@@ -27,6 +28,8 @@ createRoot(root).render(
 
     {/* <BharatClock /> */}
 
-    <Iterate />
+    {/* <Iterate /> */}
+
+    <Calculator />
   </>
 );
