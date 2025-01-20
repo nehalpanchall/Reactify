@@ -1,5 +1,6 @@
 import FoodItems from './Food Menu/FoodItems';
 import FoodTitle from './Food Menu/FoodTitle';
+import FoodContainer from '/Users/nehal/Desktop/Reactify/Reactify/src/Components/Food Menu/FoodContainer.jsx';
 
 const FoodMenu = () => {
   const title = 'Healthy Food Menu';
@@ -13,11 +14,10 @@ const FoodMenu = () => {
   ];
 
   return (
-    <>
+    <FoodContainer>
       <FoodTitle title={title} />
-
       <FoodItems FoodItems={items} />
-    </>
+    </FoodContainer>
   );
 };
 

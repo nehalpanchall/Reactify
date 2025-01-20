@@ -1,11 +1,15 @@
 .title {
   color: brown;
   background-color: wheat;
-  width: 300px;
+  width: 90%;
   font-weight: 800;
 }
 
 .items {
   font-weight: 500;
   margin: 5px;
+}
+
+.button {
+  border: 2px solid red;
 }
