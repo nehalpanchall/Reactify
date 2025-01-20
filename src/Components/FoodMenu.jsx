@@ -13,10 +13,14 @@ const FoodMenu = () => {
     'Nuts and Seeds'
   ];
 
+  const handleClick = items => {
+    console.log(items);
+  };
+
   return (
     <FoodContainer>
       <FoodTitle title={title} />
-      <FoodItems FoodItems={items} />
+      <FoodItems FoodItems={items} method={handleClick} />
     </FoodContainer>
   );
 };
