@@ -40,3 +40,15 @@ input {
   border-radius: 5px;
   background-color: white;
 }
+
+.container {
+  border: 1px solid red;
+  margin: 0px 250px;
+
+  background-color: bisque;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+}
