@@ -5,6 +5,7 @@ import Todo from './Components/Todo';
 import BharatClock from './Components/BharatClock';
 import Iterate from './Iterate';
 import Calculator from './Components/Calculator';
+import FoodMenu from './Components/FoodMenu';
 
 let root = document.getElementById('root');
 
@@ -30,6 +31,8 @@ createRoot(root).render(
 
     {/* <Iterate /> */}
 
-    <Calculator />
+    {/* <Calculator /> */}
+
+    <FoodMenu />
   </>
 );
