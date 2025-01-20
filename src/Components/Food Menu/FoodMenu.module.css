@@ -10,6 +10,7 @@
   margin: 5px;
 }
 
-.button {
-  border: 2px solid red;
+.foodButton {
+  float: right;
+  border: 1px solid black;
 }

@@ -20,14 +20,14 @@
   flex-wrap: wrap;
 }
 
-button {
+/* button {
   height: 60px;
   width: 60px;
   border: 2px solid black;
   border-radius: 10px;
   background-color: cornsilk;
   margin: 10px;
-}
+} */
 
 input {
   display: flex;
