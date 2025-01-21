@@ -7,7 +7,7 @@ import Iterate from './Iterate';
 import Calculator from './Components/Calculator';
 import FoodMenu from './Components/FoodMenu';
 
-import OnChange from './Components/onChange';
+import AddRow from './Components/AddRow';
 
 let root = document.getElementById('root');
 
@@ -29,6 +29,6 @@ createRoot(root).render(
     {/* <Iterate /> */}
     {/* <Calculator /> */}
     {/* <FoodMenu /> */}
-    <OnChange />
+    <AddRow />
   </>
 );

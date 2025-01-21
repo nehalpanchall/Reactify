@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-const onChange = () => {
-  let [items, setItems] = useState([]);
+const AddRow = () => {
+  let [items, setItems] = useState(['Apple', 'Banana', 'Corn']);
 
   function addItem() {
     let newItems = [...items, displayText];
@@ -69,4 +69,4 @@ const onChange = () => {
   );
 };
 
-export default onChange;
+export default AddRow;
