@@ -38,16 +38,19 @@ const AddRow = () => {
     }
   };
 
-  let displayBraces;
-
   if (selectItem.length > 0) {
     console.log('Not empty');
-    displayBraces = `[${selectItem}]`;
+    var displayBraces = `[${selectItem}]`;
   } else {
     console.log('empty');
   }
 
   console.log(selectItem);
+
+  const removeItem = removeIndex => {
+    let updateIndex = items.filter((_, index) => index !== removeIndex);
+    setItems(updateIndex);
+  };
 
   return (
     <>
@@ -116,6 +119,17 @@ const AddRow = () => {
                 onClick={() => changeItemColor(index, false)}
               >
                 Deselect
+              </button>
+
+              <button
+                style={{
+                  border: '1px solid black',
+                  padding: '2px 10px',
+                  margin: '10px'
+                }}
+                onClick={() => removeItem(index)}
+              >
+                Remove
               </button>
             </React.Fragment>
           );
