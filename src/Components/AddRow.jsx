@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const AddRow = () => {
-  let [items, setItems] = useState(['Apple', 'Banana', 'Corn']);
+  let [items, setItems] = useState(['Apple', 'Banana']);
 
   function addItem() {
     let newItems = [...items, displayText];
@@ -26,9 +26,16 @@ const AddRow = () => {
 
   let [selectItem, setSelectItem] = useState([]);
 
-  const changeItemColor = itemIndex => {
-    let newArr = [...selectItem, itemIndex];
-    setSelectItem(newArr);
+  let [deselectItem, setDeselectItem] = useState([]);
+
+  const changeItemColor = (itemIndex, flag) => {
+    if (flag) {
+      let selectArr = [...selectItem, itemIndex];
+      setSelectItem(selectArr);
+    } else {
+      let deselectArr = [...deselectItem, itemIndex];
+      setDeselectItem(deselectArr);
+    }
   };
 
   let displayBraces;
@@ -81,15 +88,16 @@ const AddRow = () => {
       <ul className="ml-10">
         {items.map((i, index) => {
           return (
-            <>
+            <React.Fragment key={index}>
               <li
-                key={index}
-                className={`${selectItem.includes(index) && 'text-red-600'}`}
+                className={`${selectItem.includes(index) && 'text-red-600'} ${
+                  deselectItem.includes(index) && 'text-black'
+                } `}
               >
                 <b>{i}</b>
               </li>
               <button
-                onClick={() => changeItemColor(index)}
+                onClick={() => changeItemColor(index, true)}
                 style={{
                   border: '1px solid black',
                   padding: '2px 10px',
@@ -98,7 +106,18 @@ const AddRow = () => {
               >
                 Select
               </button>
-            </>
+
+              <button
+                style={{
+                  border: '1px solid black',
+                  padding: '2px 10px',
+                  margin: '10px'
+                }}
+                onClick={() => changeItemColor(index, false)}
+              >
+                Deselect
+              </button>
+            </React.Fragment>
           );
         })}
       </ul>
