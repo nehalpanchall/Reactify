@@ -24,6 +24,24 @@ const AddRow = () => {
     document.querySelector('#textField').focus();
   };
 
+  let [selectItem, setSelectItem] = useState([]);
+
+  const changeItemColor = itemIndex => {
+    let newArr = [...selectItem, itemIndex];
+    setSelectItem(newArr);
+  };
+
+  let displayBraces;
+
+  if (selectItem.length > 0) {
+    console.log('Not empty');
+    displayBraces = `[${selectItem}]`;
+  } else {
+    console.log('empty');
+  }
+
+  console.log(selectItem);
+
   return (
     <>
       <h1>On change</h1>
@@ -61,10 +79,31 @@ const AddRow = () => {
       </button>
 
       <ul className="ml-10">
-        {items.map((i, index) => (
-          <li key={index}>{i}</li>
-        ))}
+        {items.map((i, index) => {
+          return (
+            <>
+              <li
+                key={index}
+                className={`${selectItem.includes(index) && 'text-red-600'}`}
+              >
+                <b>{i}</b>
+              </li>
+              <button
+                onClick={() => changeItemColor(index)}
+                style={{
+                  border: '1px solid black',
+                  padding: '2px 10px',
+                  margin: '10px'
+                }}
+              >
+                Select
+              </button>
+            </>
+          );
+        })}
       </ul>
+
+      <h1>Selected Items: {displayBraces}</h1>
     </>
   );
 };
