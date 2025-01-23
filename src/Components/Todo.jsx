@@ -11,9 +11,13 @@ const Todo = () => {
   ]);
 
   const getTodoItem = (name, date) => {
-    let newItem = { todoName: name, todoDate: date };
+    let newItem = { todoName: name.value, todoDate: date.value };
     let newArr = [...todoItems, newItem];
     setTodoItems(newArr);
+
+    name.value = '';
+    date.value = '';
+    name.focus();
   };
 
   return (
