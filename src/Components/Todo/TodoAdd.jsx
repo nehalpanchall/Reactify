@@ -1,6 +1,24 @@
+import { useState } from 'react';
 import TodoTitle from './TodoTitle';
 
 const TodoAdd = ({ getTodoItem }) => {
+  const [name, setName] = useState('');
+  const [date, setDate] = useState('');
+
+  const manageName = (event) => {
+    setName(event.target.value);
+  };
+
+  const manageDate = (event) => {
+    setDate(event.target.value);
+  };
+
+  const handleAddButton = () => {
+    getTodoItem(name, date);
+    setName('');
+    setDate('');
+  };
+
   return (
     <>
       <TodoTitle />
@@ -8,17 +26,21 @@ const TodoAdd = ({ getTodoItem }) => {
         <input
           type="text"
           id="todoName"
+          onChange={(event) => manageName(event)}
+          value={name}
           placeholder="Enter Todo.."
           className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <input
           type="date"
           id="todoDate"
+          onChange={(event) => manageDate(event)}
+          value={date}
           className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-          onClick={() => getTodoItem(todoName, todoDate)}
+          onClick={handleAddButton}
         >
           Add
         </button>
