@@ -7,7 +7,7 @@ const TodoItems = ({ todoItems }) => {
 
   // ]
 
-  console.log(todoItems);
+  // console.log(todoItems);
 
   // for (let i of todoItems) {
   //   for (let j in i) {
