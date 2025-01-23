@@ -20,13 +20,18 @@ const Todo = () => {
     name.focus();
   };
 
+  const deleteItem = (deleteItem) => {
+    let notDelete = todoItems.filter((item) => item !== deleteItem);
+    setTodoItems(notDelete);
+  };
+
   return (
     <>
       <div className="bg-gray-100 p-6 rounded-lg shadow-md max-w-lg mx-auto mt-10">
         <TodoTitle newTitle={title} />
         <TodoAdd getTodoItem={getTodoItem} />
 
-        <TodoItems todoItems={todoItems} />
+        <TodoItems todoItems={todoItems} deleteItem={deleteItem} />
       </div>
     </>
   );
