@@ -1,11 +1,15 @@
 import css from './Calculator.module.css';
 
-const ButtonsContainer = ({ keypad }) => {
+const ButtonsContainer = ({ keypad, getValue }) => {
   return (
     <>
       <div className={css.displayButtons}>
         {keypad.map((items, index) => {
-          return <button key={index}>{items}</button>;
+          return (
+            <button key={index} onClick={getValue}>
+              {items}
+            </button>
+          );
         })}
       </div>
     </>
