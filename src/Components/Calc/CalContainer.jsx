@@ -1,7 +1,7 @@
 import css from './Calculator.module.css';
 
 const CalContainer = props => {
-  console.log(props);
+  // console.log(props);
   return (
     <>
       <h1>Props child Container</h1>

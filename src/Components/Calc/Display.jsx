@@ -1,7 +1,9 @@
-const Display = () => {
+const Display = ({ passKey }) => {
+  // console.log(passKey);
+
   return (
     <>
-      <input type="number" readOnly></input>
+      <input type="string" value={passKey} readOnly></input>
     </>
   );
 };
