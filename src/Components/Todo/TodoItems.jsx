@@ -1,4 +1,4 @@
-const TodoItems = ({ todoItems }) => {
+const TodoItems = ({ todoItems, deleteItem }) => {
   // [
 
   // {todoName: "Buy Milk", todoDate: "11/6/2025"},
@@ -7,7 +7,7 @@ const TodoItems = ({ todoItems }) => {
 
   // ]
 
-  console.log(todoItems);
+  // console.log(todoItems);
 
   // for (let i of todoItems) {
   //   for (let j in i) {
@@ -26,7 +26,10 @@ const TodoItems = ({ todoItems }) => {
             <div className="flex justify-between items-center py-2 border-b border-gray-200">
               <span className="text-gray-700">{items.todoName}</span>
               <span className="text-gray-500 text-sm ">{items.todoDate}</span>
-              <button className="text-red-500 hover:text-red-600">
+              <button
+                className="text-red-500 hover:text-red-600"
+                onClick={() => deleteItem(items)}
+              >
                 Delete
               </button>
             </div>
