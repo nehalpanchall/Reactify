@@ -1,26 +1,20 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import TodoTitle from './TodoTitle';
 import { IoAddCircleSharp } from 'react-icons/io5';
 
 const TodoAdd = ({ getTodoItem }) => {
-  const [name, setName] = useState('');
-  const [date, setDate] = useState('');
-
-  const manageName = (event) => {
-    setName(event.target.value);
-  };
-
-  const manageDate = (event) => {
-    setDate(event.target.value);
-  };
+  const todoNameInput = useRef();
+  const todoDateInput = useRef();
 
   const handleAddButton = (event) => {
-    // console.log(event.target[0].value);
+    let name = todoNameInput.current.value;
+    let date = todoDateInput.current.value;
+
+    todoNameInput.current.value = '';
+    todoDateInput.current.value = '';
     event.preventDefault();
-    document.querySelector('input').focus();
+    todoNameInput.current.focus();
     getTodoItem(name, date);
-    setName('');
-    setDate('');
   };
 
   return (
@@ -29,17 +23,14 @@ const TodoAdd = ({ getTodoItem }) => {
       <form className="flex items-center gap-4 mb-4" onSubmit={handleAddButton}>
         <input
           type="text"
-          id="todoName"
-          onChange={(event) => manageName(event)}
-          value={name}
+          ref={todoNameInput}
           placeholder="Enter Todo.."
           className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <input
           type="date"
           id="todoDate"
-          onChange={(event) => manageDate(event)}
-          value={date}
+          ref={todoDateInput}
           className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <button

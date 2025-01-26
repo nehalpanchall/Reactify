@@ -12,8 +12,10 @@ const Todo = () => {
 
   const getTodoItem = (name, date) => {
     let newItem = { todoName: name, todoDate: date };
-    let newArr = [...todoItems, newItem];
-    setTodoItems(newArr);
+    setTodoItems((currentArr) => {
+      let newArr = [...currentArr, newItem];
+      return newArr;
+    });
 
     // name.value = '';
     // date.value = '';
