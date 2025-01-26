@@ -14,7 +14,9 @@ const TodoAdd = ({ getTodoItem }) => {
     setDate(event.target.value);
   };
 
-  const handleAddButton = () => {
+  const handleAddButton = (event) => {
+    // console.log(event.target[0].value);
+    event.preventDefault();
     getTodoItem(name, date);
     setName('');
     setDate('');
@@ -23,7 +25,7 @@ const TodoAdd = ({ getTodoItem }) => {
   return (
     <>
       <TodoTitle />
-      <div className="flex items-center gap-4 mb-4">
+      <form className="flex items-center gap-4 mb-4" onSubmit={handleAddButton}>
         <input
           type="text"
           id="todoName"
@@ -41,11 +43,11 @@ const TodoAdd = ({ getTodoItem }) => {
         />
         <button
           className="bg-blue-500 text-white px-3 py-3 rounded-lg hover:bg-blue-600"
-          onClick={handleAddButton}
+          // onClick={handleAddButton}
         >
           <IoAddCircleSharp className="size-5" />
         </button>
-      </div>
+      </form>
     </>
   );
 };
