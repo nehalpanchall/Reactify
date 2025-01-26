@@ -1,3 +1,5 @@
+import { RiDeleteBin6Fill } from 'react-icons/ri';
+
 const TodoItems = ({ todoItems, deleteItem }) => {
   // [
 
@@ -30,7 +32,7 @@ const TodoItems = ({ todoItems, deleteItem }) => {
                 className="text-red-500 hover:text-red-600"
                 onClick={() => deleteItem(items)}
               >
-                Delete
+                <RiDeleteBin6Fill className="size-6 mr-5" />
               </button>
             </div>
           </div>
