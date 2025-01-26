@@ -1,6 +1,8 @@
 import { RiDeleteBin6Fill } from 'react-icons/ri';
+import TodoContext from '../Context/TodoContext';
+import { useContext } from 'react';
 
-const TodoItems = ({ todoItems, deleteItem }) => {
+const TodoItems = () => {
   // [
 
   // {todoName: "Buy Milk", todoDate: "11/6/2025"},
@@ -17,6 +19,9 @@ const TodoItems = ({ todoItems, deleteItem }) => {
   //   }
   // }
 
+  const { todoItems, deleteItem } = useContext(TodoContext);
+
+  // console.log(objFromProvider);
   return (
     <>
       {todoItems.map((items) => {

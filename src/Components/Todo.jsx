@@ -2,6 +2,7 @@ import { useState } from 'react';
 import TodoAdd from './Todo/TodoAdd';
 import TodoItems from './Todo/TodoItems';
 import TodoTitle from './Todo/TodoTitle';
+import TodoContext from './Context/TodoContext';
 
 const Todo = () => {
   let title = 'Todo with props';
@@ -28,14 +29,21 @@ const Todo = () => {
   };
 
   return (
-    <>
+    <TodoContext.Provider
+      value={{
+        todoItems,
+        deleteItem,
+        getTodoItem,
+        title,
+      }}
+    >
       <div className="bg-gray-100 p-6 rounded-lg shadow-md max-w-lg mx-auto mt-10">
-        <TodoTitle newTitle={title} />
-        <TodoAdd getTodoItem={getTodoItem} />
+        <TodoTitle />
+        <TodoAdd />
 
-        <TodoItems todoItems={todoItems} deleteItem={deleteItem} />
+        <TodoItems />
       </div>
-    </>
+    </TodoContext.Provider>
   );
 };
 
