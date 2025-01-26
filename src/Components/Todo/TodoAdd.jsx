@@ -17,6 +17,7 @@ const TodoAdd = ({ getTodoItem }) => {
   const handleAddButton = (event) => {
     // console.log(event.target[0].value);
     event.preventDefault();
+    document.querySelector('input').focus();
     getTodoItem(name, date);
     setName('');
     setDate('');
