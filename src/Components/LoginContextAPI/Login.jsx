@@ -1,5 +1,5 @@
-import { useContext, useRef, useState } from 'react';
-import LoginContextObj from './context/LoginContext';
+import { useRef, useState } from 'react';
+import { useTodo } from './context/LoginContext';
 
 const Login = () => {
   let [userName, setUserName] = useState('');
@@ -7,7 +7,7 @@ const Login = () => {
 
   let userRef = useRef(null);
 
-  const contextObj = useContext(LoginContextObj);
+  const contextObj = useTodo();
 
   const loginCLick = e => {
     e.preventDefault();

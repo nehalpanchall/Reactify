@@ -1,8 +1,7 @@
-import { useContext } from 'react';
-import LoginContextObj from './context/LoginContext';
+import { useTodo } from './context/LoginContext';
 
 const ProfileMessage = () => {
-  let { user } = useContext(LoginContextObj);
+  let { user } = useTodo();
 
   if (!user) return <h1>Please Login First</h1>;
 

@@ -1,5 +1,14 @@
-import { createContext } from 'react';
+import { createContext, useContext } from 'react';
 
-const LoginContextObj = createContext({ user: '', setUser: () => {} });
+const LoginContextObj = createContext({
+  user: 'Default Value',
+  setUser: () => {}
+});
 
-export default LoginContextObj;
+// provider single provider
+const LoginProvider = LoginContextObj.Provider;
+
+// Custom hook: avoid importing useContect and LoginContextObj
+const useTodo = () => useContext(LoginContextObj);
+
+export { LoginProvider, useTodo };
