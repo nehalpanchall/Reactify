@@ -8,6 +8,7 @@ import Calculator from './Components/Calculator';
 import FoodMenu from './Components/FoodMenu';
 
 import AddRow from './Components/AddRow';
+import ContextAPI from './Components/ContextAPI';
 
 let root = document.getElementById('root');
 
@@ -29,6 +30,8 @@ createRoot(root).render(
     {/* <Iterate /> */}
     {/* <Calculator /> */}
     {/* <FoodMenu /> */}
-    <AddRow />
+    {/* <AddRow /> */}
+
+    <ContextAPI />
   </>
 );
