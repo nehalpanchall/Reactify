@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import TodoContext from './TodoContext';
 
-const TodoProvider = ({ children }) => {
+const TodoProvider = (props) => {
   let title = 'Todo with Context';
 
   const [todoItems, setTodoItems] = useState([
@@ -29,7 +29,7 @@ const TodoProvider = ({ children }) => {
         title,
       }}
     >
-      {children}
+      {props.children}
     </TodoContext.Provider>
   );
 };
