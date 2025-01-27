@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react';
+import { useContext, useRef } from 'react';
 import TodoTitle from './TodoTitle';
 import { IoAddCircleSharp } from 'react-icons/io5';
+import TodoContext from '../Context/TodoContext';
 
-const TodoAdd = ({ getTodoItem }) => {
+const TodoAdd = () => {
   const todoNameInput = useRef();
   const todoDateInput = useRef();
 
@@ -17,9 +18,10 @@ const TodoAdd = ({ getTodoItem }) => {
     getTodoItem(name, date);
   };
 
+  let { getTodoItem } = useContext(TodoContext);
+
   return (
     <>
-      <TodoTitle />
       <form className="flex items-center gap-4 mb-4" onSubmit={handleAddButton}>
         <input
           type="text"
