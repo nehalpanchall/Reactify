@@ -1,34 +1,29 @@
-// TodoProvider.jsx
-import React, { useReducer, useState } from 'react';
+import React, { useReducer } from 'react';
 import TodoContext from './TodoContext';
 
 function reducer(currItem, action) {
-  console.log(action);
-  let newItem = currItem;
+  switch (action.type) {
+    case 'ADD_TODO':
+      return [
+        ...currItem,
+        {
+          todoName: action.payload.name,
+          todoDate: action.payload.date,
+        },
+      ];
 
-  if (action.type === 'ADD_TODO') {
-    newItem = [
-      ...currItem,
-      {
-        todoName: action.payload.name,
-        todoDate: action.payload.date,
-      },
-    ];
-  } else if (action.type === 'DELETE_TODO') {
-    console.log(action.payload.deleteItem);
-    newItem = currItem.filter((items) => items !== action.payload.deleteItem);
+    case 'DELETE_TODO':
+      return currItem.filter((items) => items !== action.payload.deleteItem);
+
+    default:
+      return currItem;
   }
-  return newItem;
 }
 
 // component
 const TodoProvider = (props) => {
   let initialState = [{ todoName: 'Buy Milk', todoDate: '11/06/2025' }];
   let title = 'Todo with Context';
-
-  // const [todoItems, setTodoItems] = useState([
-  //   { todoName: 'Buy Milk', todoDate: '11/06/2025' },
-  // ]);
 
   const [todoItems, dispatchTodo] = useReducer(reducer, initialState);
 
@@ -42,9 +37,6 @@ const TodoProvider = (props) => {
     };
 
     dispatchTodo(addTodoAction);
-
-    // let newItem = { todoName: name, todoDate: date };
-    // setTodoItems((currentArr) => [...currentArr, newItem]);
   };
 
   const deleteItem = (deleteItem) => {
@@ -54,10 +46,6 @@ const TodoProvider = (props) => {
     };
 
     dispatchTodo(deleteTodoAction);
-
-    // setTodoItems((currentArr) =>
-    //   currentArr.filter((item) => item !== deleteItem)
-    // );
   };
 
   return (
